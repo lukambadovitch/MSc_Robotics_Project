@@ -1,9 +1,9 @@
 # MSc_Robotics_Project
 
 ## Synopsis
-  1. [Project Description](#Pro)
-  2. [Navigation](#Nav)
-  3. [Visual Servoing](#VS)
+  1. [Project Description](#project-description)
+  2. [Navigation](#navigation)
+  3. [Visual Servoing](#visual-servoing)
   
 
 ## Project Description
