@@ -28,4 +28,8 @@ by using only the Image Features of a Pattern in 3D space. The Image features ca
 - <b> Hybrid Visual Servoing: </b> This method combines PBVS and IBVS to avoid the drawbacks of those techniques. It is based on the estimation of the partial camera movement from the current position to the desired position.
 
 ### Image Based Visual Servoing
-IBVS with QR codes as Image Feature has been implemented in this project. As shown in [Figure 1](#vsloop) the Visual Servoing Algorithms perform a closed loop process for minimizing the Error Function <i>e(t)</i> 
+IBVS with QR codes as Image Feature has been implemented in this project. As shown in [Figure 1](#vsloop) the Visual Servoing Algorithms perform a closed loop process for minimizing the Error Function <i>e(t)</i>. The Error function, <i>e(t)</i> is the disparity between the Desired Features <i>S*</i> and Measured Features <i>S(t)</i> at time <i>t</i>.
+
+<p align="center">
+   <img src="/Images/Error.png" alt="Error" />
+</p>
