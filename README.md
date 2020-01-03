@@ -40,7 +40,6 @@ In IBVS, the Features are a set of 2D parameters directly expressed in the image
    <img src="/Images/Controllaw.png" alt="Control Law" />
 </p>
 
-where, 
-
- - <img src="/Images/Moore.png" alt="Moore" /> is the Moore-Penrose pseudoinverse.
- - <b> L </b> is the Interaction Matrix.
+where,
+ - λ is a positivive gain tuning the rate of convergence of the system.
+ -  is the Moore-Penrose pseudo inverse of an approximation or an estimation of the features Jacobian. 
