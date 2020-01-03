@@ -1,9 +1,10 @@
 # MSc_Robotics_Project
 
 ## Synopsis
-  1. [Project Description](#project-description)
-  2. [Navigation](#navigation)
-  3. [Visual Servoing](#visual-servoing)
+  1. [Introduction](#introduction)
+  2. [Project Description](#project-description)
+  3. [Navigation](#navigation)
+  4. [Visual Servoing](#visual-servoing)
   
 ## Project Description
 This project is developed under ROS-Kinetic environment on Ubuntu 16.04 LTS with a TurtleBot. 
