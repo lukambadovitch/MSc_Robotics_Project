@@ -17,11 +17,8 @@ Visual Servoing (VS), also known as Vision-based Robot Control is a technique wh
 <p align="center">
   <img src="/Images/VS.png" alt="Visual Servoing Loop" />
 </p>
-<p align="center">
-  
-  ### Figure 1: Visual Servoing Loop
-  
-</p>
+<align="center" 
+### Figure 1: Visual Servoing Loop />
 Based on the type of Visual Features used as a feedback control, Visual Servoing can be classified as,
 
 - <b> IBVS (Image Based Visual Servoing): </b> The idea is to move the robot from its current location to a desired location
@@ -32,7 +29,7 @@ by using only the Image Features of a Pattern in 3D space. The Image features ca
 - <b> Hybrid Visual Servoing: </b> This method combines PBVS and IBVS to avoid the drawbacks of those techniques. It is based on the estimation of the partial camera movement from the current position to the desired position.
 
 ### Image Based Visual Servoing
-IBVS with QR codes as Image Feature has been implemented in this project. As shown in [Figure 1](#vsloop) the Visual Servoing Algorithms perform a closed loop process for minimizing the Error Function <i>e(t)</i>. The Error function, <i>e(t)</i> is the disparity between the Desired Features <i>S*</i> and Measured Features <i>S(t)</i> at time <i>t</i>.
+IBVS with QR codes as Image Feature has been implemented in this project. As shown in [Figure 1](#figure-1-visual-servoing-loop) the Visual Servoing Algorithms perform a closed loop process for minimizing the Error Function <i>e(t)</i>. The Error function, <i>e(t)</i> is the disparity between the Desired Features <i>S*</i> and Measured Features <i>S(t)</i> at time <i>t</i>.
 
 <p align="center">
   <img src="/Images/Error.png" alt="Error" /> 
