@@ -34,4 +34,13 @@ IBVS with QR codes as Image Feature has been implemented in this project. As sho
    <img src="/Images/Error.png" alt="Error" />
 </p>
 
-In IBVS, the Features are a set of 2D parameters directly expressed in the image like coordinates of feature points, line segments, planes, etc.
+In IBVS, the Features are a set of 2D parameters directly expressed in the image like coordinates of feature points, line segments, planes, etc. After computing the Error function, the Velocity for the Robot's Motion can be calculated by,
+
+<p align="center">
+   <img src="/Images/Controllaw.png" alt="Control Law" />
+</p>
+
+where, 
+
+ - <img src="/Images/Moore.png" alt="Moore" /> is the Moore-Penrose pseudoinverse.
+ - <b> L </b> is the Interaction Matrix.
