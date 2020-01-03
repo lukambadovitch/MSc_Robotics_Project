@@ -11,13 +11,13 @@ This project is developed under ROS-Kinetic environment on Ubuntu 16.04 LTS with
 ## Navigation
 
 ## Visual Servoing
-Visual Servoing (VS), also known as Vision-based Robot Control is a technique which helps in fine-positioning of a robot by using the Visual Features (obtained from a Vision Sensor) as Feedback Information to control the Movement of the Robot as represented in <a href="#figure-1-visual-servoing-loop">Figure 1</a> [Figure 1](#figure-1-visual-servoing-loop). Visual Servoing can be performed in two configurations based on the placement of Vision Sensors, Eye-in-Hand (the Camera is placed in the Robot and the observing target is static or dynamic placed in the environment) or Eye-to-Hand (the Camera is fixed in the world and observes the moving target attached to the Robot). In this project Eye-in-Hand configuration has been opted.  
+Visual Servoing (VS), also known as Vision-based Robot Control is a technique which helps in fine-positioning of a robot by using the Visual Features (obtained from a Vision Sensor) as Feedback Information to control the Movement of the Robot as represented in Figure 1. Visual Servoing can be performed in two configurations based on the placement of Vision Sensors, Eye-in-Hand (the Camera is placed in the Robot and the observing target is static or dynamic placed in the environment) or Eye-to-Hand (the Camera is fixed in the world and observes the moving target attached to the Robot). In this project Eye-in-Hand configuration has been opted.  
 
 <p align="center">
-  <b>Figure 1: Visual Servoing Loop</b><br>
-  <br><br>
   <img src="/Images/VS.png" alt="Visual Servoing Loop" />
-  
+</p>
+<p align="center">
+  Figure 1: Visual Servoing Loop
 </p>
 
 Based on the type of Visual Features used as a feedback control, Visual Servoing can be classified as,
@@ -30,7 +30,7 @@ by using only the Image Features of a Pattern in 3D space. The Image features ca
 - <b> Hybrid Visual Servoing: </b> This method combines PBVS and IBVS to avoid the drawbacks of those techniques. It is based on the estimation of the partial camera movement from the current position to the desired position.
 
 ### Image Based Visual Servoing
-IBVS with QR codes as Image Feature has been implemented in this project. As shown in [Figure 1](#figure-1-visual-servoing-loop) the Visual Servoing Algorithms perform a closed loop process for minimizing the Error Function <i>e(t)</i>. The Error function, <i>e(t)</i> is the disparity between the Desired Features <i>S*</i> and Measured Features <i>S(t)</i> at time <i>t</i>.
+IBVS with QR codes as Image Feature has been implemented in this project. As shown in Figure 1 the Visual Servoing Algorithms perform a closed loop process for minimizing the Error Function <i>e(t)</i>. The Error function, <i>e(t)</i> is the disparity between the Desired Features <i>S*</i> and Measured Features <i>S(t)</i> at time <i>t</i>.
 
 <p align="center">
   <img src="/Images/Error.png" alt="Error" /> 
@@ -44,8 +44,13 @@ In IBVS, the Features are a set of 2D parameters directly expressed in the image
 
 where,
  - <b>λ</b> is a positivive gain tuning the rate of convergence of the system.
- - <img src="/Images/J.png" width="25" height="25" alt="Jacobaian Matrix" /> is the Moore-Penrose pseudo inverse of an approximation or an estimation of the features Jacobian. The following Figure shows the IBVS Loop.
+ - <img src="/Images/J.png" width="25" height="25" alt="Jacobaian Matrix" /> is the Moore-Penrose pseudo inverse of an approximation or an estimation of the features Jacobian. 
+ 
+The following Figure clearly explains the sequential procedure for IBVS.
 
 <p align="center">
    <img src="/Images/IBVS1.png" alt="IBVS" />
+</p>
+<p align="center">
+   Figure 2: Block Diagram of Image Based Visual Servoing
 </p>
