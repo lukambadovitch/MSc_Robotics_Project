@@ -39,17 +39,17 @@ IBVS with QR codes as Image Feature has been implemented in this project. As sho
 In IBVS, the Features are a set of 2D parameters directly expressed in the image like coordinates of feature points, line segments, planes, etc. After computing the Error function, the Velocity for the Robot's Motion can be calculated by,
 
 <p align="center">
-   <img src="/Images/ControlLaw.png" alt="Control Law" />
+   <img src="/Images/Control-Law.png" alt="Control Law" />
 </p>
 
 where,
- - <b>λ</b> is a positivive gain tuning the rate of convergence of the system.
- - <img src="/Images/J.png" width="25" height="25" alt="Jacobaian Matrix" /> is the Moore-Penrose pseudo inverse of an approximation or an estimation of the features Jacobian. 
+ - <img src="/Images/Lambda.png" width="25" height="25" alt="Lambda" /> is a positivive gain tuning the rate of convergence of the system.
+ - <img src="/Images/Pseudo-Inverse.png" width="25" height="25" alt="Jacobaian Matrix" /> is the Moore-Penrose pseudo inverse of an approximation or an estimation of the features Jacobian. 
  
 The following Figure clearly explains the sequential procedure for IBVS.
 
 <p align="center">
-   <img src="/Images/IBVS1.png" alt="IBVS" />
+   <img src="/Images/IBVS.png" alt="IBVS" />
 </p>
 <p align="center">
    Figure 2: Block Diagram of Image Based Visual Servoing
