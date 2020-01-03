@@ -34,19 +34,19 @@ by using only the Image Features of a Pattern in 3D space. The Image features ca
 IBVS with QR codes as Image Feature has been implemented in this project. As shown in Figure 1 the Visual Servoing Algorithms perform a closed loop process for minimizing the Error Function <b>e(t)</b>. The Error function, <b>e(t)</b> is the disparity between the Desired Features <b>S*</b> and Measured Features <b>S(t)</b> at time <b>t</b>.
 
 <p align="center">
-  <img src="/Images/Error.png" width="120" height="20" alt="Error" /> 
+  <img src="/Images/Error.png" width="150" height="30" alt="Error" /> 
 </p>
 
 In IBVS, the Features are a set of 2D parameters directly expressed in the image like coordinates of feature points, line segments, planes, etc. After computing the Error function, the Velocity for the Robot's Motion can be calculated by,
 
 <p align="center">
-   <img src="/Images/Control-Law.png" width="150" height="30" alt="Control Law" />
+   <img src="/Images/Control-Law.png" width="170" height="45" alt="Control Law" />
 </p>
 
 where,
- - <img src="/Images/Vel.png" width="25" height="25" alt="Velocity" /> is the Control applied to the Robot for Motion.
- - <img src="/Images/Lambda.png" width="25" height="25" alt="Lambda" /> is a positivive gain tuning the rate of convergence of the system.
- - <img src="/Images/Pseudo-Inverse.png" width="25" height="25" alt="Jacobaian Matrix" /> is the Moore-Penrose pseudo inverse of an approximation or an estimation of the features Jacobian. 
+ - <img src="/Images/Vel.png" width="20" height="20" alt="Velocity" /> is the Control applied to the Robot for Motion.
+ - <img src="/Images/Lambda.png" width="20" height="20" alt="Lambda" /> is a positivive gain tuning the rate of convergence of the system.
+ - <img src="/Images/Pseudo-Inverse.png" width="20" height="20" alt="Jacobaian Matrix" /> is the Moore-Penrose pseudo inverse of an approximation or an estimation of the features Jacobian. 
  
 The following Figure clearly explains the sequential procedure for IBVS.
 
