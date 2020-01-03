@@ -40,7 +40,7 @@ IBVS with QR codes as Image Feature has been implemented in this project. As sho
 In IBVS, the Features are a set of 2D parameters directly expressed in the image like coordinates of feature points, line segments, planes, etc. After computing the Error function, the Velocity for the Robot's Motion can be calculated by,
 
 <p align="center">
-   <img src="/Images/Control-Law.png" width="170" height="40" alt="Control Law" />
+   <img src="/Images/Control-Law.png" width="180" height="40" alt="Control Law" />
 </p>
 
 where,
