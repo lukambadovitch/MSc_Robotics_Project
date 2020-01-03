@@ -33,3 +33,5 @@ IBVS with QR codes as Image Feature has been implemented in this project. As sho
 <p align="center">
    <img src="/Images/Error.png" alt="Error" />
 </p>
+
+In IBVS, the Features are a set of 2D parameters directly expressed in the image like coordinates of feature points, line segments, planes, etc.
