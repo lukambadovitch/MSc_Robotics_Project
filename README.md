@@ -44,6 +44,7 @@ In IBVS, the Features are a set of 2D parameters directly expressed in the image
 </p>
 
 where,
+ - <img src="/Images/Vel.png" width="25" height="25" alt="Velocity" /> is the Control applied to the Robot for Motion.
  - <img src="/Images/Lambda.png" width="25" height="25" alt="Lambda" /> is a positivive gain tuning the rate of convergence of the system.
  - <img src="/Images/Pseudo-Inverse.png" width="25" height="25" alt="Jacobaian Matrix" /> is the Moore-Penrose pseudo inverse of an approximation or an estimation of the features Jacobian. 
  
