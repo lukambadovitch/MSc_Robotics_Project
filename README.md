@@ -34,13 +34,13 @@ by using only the Image Features of a Pattern in 3D space. The Image features ca
 IBVS with QR codes as Image Feature has been implemented in this project. As shown in Figure 1 the Visual Servoing Algorithms perform a closed loop process for minimizing the Error Function <b>e(t)</b>. The Error function, <b>e(t)</b> is the disparity between the Desired Features <b>S*</b> and Measured Features <b>S(t)</b> at time <b>t</b>.
 
 <p align="center">
-  <img src="/Images/Error.png" width="30" height="150" alt="Error" /> 
+  <img src="/Images/Error.png" width="150" height="30" alt="Error" /> 
 </p>
 
 In IBVS, the Features are a set of 2D parameters directly expressed in the image like coordinates of feature points, line segments, planes, etc. After computing the Error function, the Velocity for the Robot's Motion can be calculated by,
 
 <p align="center">
-   <img src="/Images/Control-Law.png" width="30" height="150" alt="Control Law" />
+   <img src="/Images/Control-Law.png" width="150" height="30" alt="Control Law" />
 </p>
 
 where,
