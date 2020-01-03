@@ -41,5 +41,5 @@ In IBVS, the Features are a set of 2D parameters directly expressed in the image
 </p>
 
 where,
- - λ is a positivive gain tuning the rate of convergence of the system.
- -  is the Moore-Penrose pseudo inverse of an approximation or an estimation of the features Jacobian. 
+ - <b>λ</b> is a positivive gain tuning the rate of convergence of the system.
+ - <img src="/Images/J.png" width="10" height="10" alt="Jacobaian Matrix" /> is the Moore-Penrose pseudo inverse of an approximation or an estimation of the features Jacobian. 
