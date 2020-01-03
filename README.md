@@ -17,8 +17,7 @@ Visual Servoing (VS), also known as Vision-based Robot Control is a technique wh
 <p align="center">
   <img src="/Images/VS.png" alt="Visual Servoing Loop" />
 </p>
-<align="center" 
-### Figure 1: Visual Servoing Loop />
+##### Figure 1: Visual Servoing Loop
 Based on the type of Visual Features used as a feedback control, Visual Servoing can be classified as,
 
 - <b> IBVS (Image Based Visual Servoing): </b> The idea is to move the robot from its current location to a desired location
