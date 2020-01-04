@@ -5,9 +5,14 @@
   2. [Project Description](#project-description)
   3. [Navigation](#navigation)
   4. [Visual Servoing](#visual-servoing)
-  
+  5. [Results](#results)
+
+## Introduction
+
 ## Project Description
-This project is developed under ROS-Kinetic environment on Ubuntu 16.04 LTS with a TurtleBot. 
+The goal of this project is to navigate the robot from an initial location to an approximate target location and fine-position the robot at a certain distance from the QR tag using Visual Servoing.
+
+This project is developed under ROS-Kinetic environment on Ubuntu 16.04 LTS implemented in the TurtleBot-2. TurtleBot-2 has two Degrees-0f-Freedom (DoF), translation along x-axis and rotation along z-axis. The TurtleBot we used in the implementation of our project is equiped with Kinect Sensor which is a RGB-D camera with view span of 120 degree and LiDAR with 360 degree view span.
 
 ## Navigation
 
@@ -56,3 +61,5 @@ The following Figure clearly explains the sequential procedure for IBVS.
 <p align="center">
    Figure 2: Block Diagram of Image Based Visual Servoing
 </p>
+
+## Results
