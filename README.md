@@ -99,7 +99,7 @@ Both Navigation and Fine Positioning can be performed sequentially by executing 
 roslaunch visual_servoing_prj turtlebot_follower.launch
 ```
 
-After executing the launch file press <img src="/Images/key_space_bar.png" width="20" height="20" alt="Space Bar" /> key to start the process. We have achieved the goal of the project and here are some Recorded Results of our implementation.
+After executing the launch file press <img src="/Images/key_space_bar.png" width="80" height="20" alt="Space Bar" /> key to start the process. We have achieved the goal of the project and here are some Recorded Results of our implementation.
 
 ### Visual Servoing with A4 Size QR-tag
 [![SCENARIO](http://i3.ytimg.com/vi/Egyl9DstUiU/maxresdefault.jpg)](https://www.youtube.com/watch?v=Egyl9DstUiU)
