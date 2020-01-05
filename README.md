@@ -37,24 +37,24 @@ This project is developed under ROS-Kinetic environment on Ubuntu 16.04 LTS impl
   + clone the project from https://github.com/roboticslab-fr/turtlebot_vibot into ```/src``` directory of your catkin workspace in the turtlebot pc
       
 ```
-  git clone https://github.com/roboticslab-fr/turtlebot_vibot
-  cd </catkin_ws>
-  catkin make
-  rospack profile
+    git clone https://github.com/roboticslab-fr/turtlebot_vibot
+    cd </catkin_ws>
+    catkin make
+    rospack profile
 ```
 - <b> Installing VISP package for visual servoing </b>:
 
-http://wiki.ros.org/visp
+  + http://wiki.ros.org/visp
 
 - <b> setting Up project on Turtlebot </b>:
 
-on the turtlebot pc:
+  + on the turtlebot pc:
 ```
-  cd </catkin_ws>/src
-  git clone https://github.com/Macaulay-Sadiq/MSc_Robotics_Project.git
-  cd  </catkin_ws>
-  catkin make
-  rospack profile
+    cd </catkin_ws>/src
+    git clone https://github.com/Macaulay-Sadiq/MSc_Robotics_Project.git
+    cd  </catkin_ws>
+    catkin make
+    rospack profile
 ```
 
 
