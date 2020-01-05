@@ -5,39 +5,53 @@
   2. [Project Description](#project-description)
   3. [Navigation](#navigation)
   4. [Visual Servoing](#visual-servoing)
-  5. [Results](#results)
+  5. [Outcomes](#outcomes)
 
 ## Introduction
 
 ## Project Description
 The goal of this project is to navigate the robot from an initial location to an approximate target location and fine-position the robot at a certain distance from the QR tag using Visual Servoing.
 
-This project is developed under ROS-Kinetic environment on Ubuntu 16.04 LTS implemented in the TurtleBot-2. TurtleBot-2 has two Degrees-0f-Freedom (DoF), translation along x-axis and rotation along z-axis. The TurtleBot we used in the implementation of our project is equiped with Kinect Sensor which is a RGB-D camera with view span of 120 degree and LiDAR with 360 degree view span.
+This project is developed under ROS-Kinetic environment on Ubuntu 16.04 LTS implemented in the TurtleBot-2. TurtleBot-2 has two Degrees-0f-Freedom (DoF), translation along x-axis and rotation along z-axis. The TurtleBot we used in the implementation of our project is equiped with Kinect Sensor which is a RGB-D camera with view span of 60 degree and LiDAR with 360 degree view span.
 
 ### Required ROS Packages
 - <b> Building ROS Environment for the Project </b>:
 
 http://wiki.ros.org/kinetic/Installation/Ubuntu
+
 http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
+
 https://wiki.ros.org/ROS/EnvironmentVariables
+
 - <b> Mobile Robot Configuration (TurtleBot-2)</b>:
 
 http://wiki.ros.org/turtlebot/Tutorials/indigo/Turtlebot%20Installation
+
 - <b>TurtleBot management from the workstation </b>:
 
 http://wiki.ros.org/ROS/Tutorials/MultipleMachines
+
 - <b> Configuration of the Laser sensor with Turtlebot </b>:
 
-clone the project from https://github.com/roboticslab-fr/turtlebot_vibot into ```/src``` directory of your catkin workspace
+clone the project from https://github.com/roboticslab-fr/turtlebot_vibot into ```/src``` directory of your catkin workspace in the turtlebot pc
 ```git clone https://github.com/roboticslab-fr/turtlebot_vibot
-cd </catkin_ws/>
+cd </catkin_ws>
 catkin make
 rospack profile
 ```
 - <b> Installing VISP package for visual servoing </b>:
+
 http://wiki.ros.org/visp
 
+- <b> setting Up project on Turtlebot </b>:
 
+on the turtlebot pc:
+```cd </catkin_ws>/src
+git clone https://github.com/Macaulay-Sadiq/MSc_Robotics_Project.git
+cd  </catkin_ws>
+catkin make
+rospack profile
+```
 
 
 ## Navigation
@@ -81,16 +95,22 @@ The following Figure clearly explains the sequential procedure for IBVS.
    Figure 2: Block Diagram of Image Based Visual Servoing
 </p>
 
-#### Implementation
+### Implementation
 The control law is computed in the ```turtlebot_follower``` node which can be found in the ```visual_servoing_prj``` directory. In this file we subscribe to the ```/object_position``` topic published by the ```visp_auto_tracker``` package to extract the coordinates of the detected points on the QR-tag and the output velocity is published to ```/cmd_vel``` on the turtlebot.
 
-By running the following line of code we are able to perform the visual servoing with the turtlebot (Run this command on the turtlebot).
+By executing the following line of code we are able to perform the visual servoing with the turtlebot (Run this command on the turtlebot).
 
 ``` 
 roslaunch visual_servoing_prj kinect_visp.launch
 ```
+## Outcomes
+Both Navigation and Fine Positioning can be performed sequentially by executing the following line of code (Run this command on the turtlebot through ssh). 
 
+```
+roslaunch visual_servoing_prj turtlebot_follower.launch
+```
 
+After executing the launch file press <img src="/Images/key_space_bar.png" width="80" height="20" alt="Space Bar" /> key to start the process. We have achieved the goal of the project and here are some Recorded Results of our implementation.
 
-
-## Results
+### Visual Servoing with A4 Size QR-tag
+[![SCENARIO](http://i3.ytimg.com/vi/Egyl9DstUiU/maxresdefault.jpg)](https://youtu.be/4ZlNWGChNNU)
