@@ -12,7 +12,20 @@ In this robotics engineering project, we implemented the Localization, Mapping \
 
 The Visual Servoing will consist of fine-positioning the robot based on the information acquired from the Vision sensor, the RGB-D Kinect for our case. The step-by-step process are explained in brief in the next lines.
 
-creating and developing necessary approaches through a combination and possible modifi-cation of launch files, nodes, topics in order to achieve our tasks. The main ROS-packagesnecessary for this project are discussed in the below:1.GMapping: GMapping is actually only responsible for map generation, so if you alreadyhave generated a map.  Thanks to the package turtlebot_vibot_nav provided by thevibot lab github plateform :https://github.com/roboticslab-fr/turtlebot_vibot/tree/master/turtlebot_vibot_nav.we were able to set the navigation defined in launch files2.AMCL (Adaptive Monte Carlo Localization):  amcl is a ROS package that deals withrobot localization. It is also known as particle filter localization. The principle is thatposition and orientation data representing the robot’s pose are stored as a sample.At initial, Particles are all sampled randomly.  When the robot moves, particles areresampled based on their current state as well as the robot’s action using recursiveBayesian estimation [ ROS Navigation Tuning Guide, 2016].3.ViSP:IBVS introduced to solve image local minimal based on the principle that whenthe image feature error in 2-D image space is approaching zero, the kinematical errorin Cartesian space approaches zero too.
+In this project , we will organize the implementation as follows:
+1.  Setup the Hardware and Configure - Turtlebot, RPLIDAR, Kinect, JoyStick;
+2.  Create a Map using RPLIDAR laser scan;3.  Navigate the Robot in the Environment from its current position to the Goal Position;
+4.  Perform the Navigation close to the target QR Code;
+5.  Begin Visual Servoing and and determine the pose of the robot;
+6.  With the current pose information as feedback align the robot in the desired pose.
+
+Thanks to ROS-Middleware which is an open-source platform for robotic researches andproject development, we can achieve the various tasks involved in our project developmentby exploring the functionalities of the required ROS-packages for each process and as well.
+
+
+Creating and developing necessary approaches through a combination and possible modifi-cation of launch files, nodes, topics in order to achieve our tasks. The main ROS-packages necessary for this project are discussed in the below:
+1.GMapping: This package responsible for map generation.  Thanks to the package turtlebot_vibot_nav provided by the vibot lab github plateform :https://github.com/roboticslab-fr/turtlebot_vibot/tree/master/turtlebot_vibot_nav. we were able to set the navigation defined in launch files.
+2.AMCL (Adaptive Monte Carlo Localization):  amcl is a ROS package that deals withrobot localization. It is also known as particle filter localization. The principle is thatposition and orientation data representing the robot’s pose are stored as a sample.At initial, Particles are all sampled randomly.  When the robot moves, particles areresampled based on their current state as well as the robot’s action using recursiveBayesian estimation [ ROS Navigation Tuning Guide, 2016].
+3.ViSP:IBVS introduced to solve image local minimal based on the principle that whenthe image feature error in 2-D image space is approaching zero, the kinematical errorin Cartesian space approaches zero too.
 
 ## Project Description
 The goal of this project is to navigate the robot from an initial location to an approximate target location and fine-position the robot at a certain distance from the QR tag using Visual Servoing.
@@ -82,7 +95,7 @@ Nota Bene: Never close the Gmapping until the map is saved
 A comparison of the result obtained from a map building with an RPLIDAR scan sensorand Kinect is shown below:
 
 <p align="center">
-   <img src="/Images/image_github2.JPG" width="200" height="60" alt="Map Creation" />
+   <img src="/Images/image_github2.JPG" width="500" height="300" alt="Map Creation" />
 </p>
 
 The answers to these questions refer to localisation to determine where the robot is on themap, and path-planning to know how to reach a target position for the robot on the map.To accoplish the navigation , we need global costmap and local costmap. Global costmap is obtained from the map creation and local costmap is the map that the robot creates simultaneously while it navigates through the global costmap. futhermore, whilst navigating through global costmap, it uses the features being matched from local costmap and global costmap to do its path-planning.
