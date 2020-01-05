@@ -8,7 +8,7 @@
   5. [Outcomes](#outcomes)
 
 ## Introduction
-In this robotics engineering project, we implemented the Localization, Mapping \& Navigation using Visual Servoing in the ROS platform under the Kinetic environment. The goal of this project will be to assist the Robot, which is the Turtlebot 2 in this case, to move autonomously in a given environment. Researchers have proposed various techniques; one among them is the Visual Servoing.
+In this project, we implemented the Localization, Mapping & Navigation using Visual Servoing in the ROS platform under the Kinetic environment. The goal of this project will be to assist the Robot, which is the Turtlebot 2 in this case, to move autonomously in a given environment. Researchers have proposed various techniques; one among them is the Visual Servoing.
 
 The Visual Servoing will consist of fine-positioning the robot based on the information acquired from the Vision sensor, the RGB-D Kinect for our case. The step-by-step process are explained in brief in the next lines.
 
@@ -23,8 +23,11 @@ Thanks to ROS-Middleware which is an open-source platform for robotic researches
 
 
 Creating and developing necessary approaches through a combination and possible modifi-cation of launch files, nodes, topics in order to achieve our tasks. The main ROS-packages necessary for this project are discussed in the below:
+
 1.GMapping: This package responsible for map generation.  Thanks to the package turtlebot_vibot_nav provided by the vibot lab github plateform :https://github.com/roboticslab-fr/turtlebot_vibot/tree/master/turtlebot_vibot_nav. we were able to set the navigation defined in launch files.
+
 2.AMCL (Adaptive Monte Carlo Localization):  amcl is a ROS package that deals withrobot localization. It is also known as particle filter localization. The principle is thatposition and orientation data representing the robot’s pose are stored as a sample.At initial, Particles are all sampled randomly.  When the robot moves, particles areresampled based on their current state as well as the robot’s action using recursiveBayesian estimation [ ROS Navigation Tuning Guide, 2016].
+
 3.ViSP:IBVS introduced to solve image local minimal based on the principle that whenthe image feature error in 2-D image space is approaching zero, the kinematical errorin Cartesian space approaches zero too.
 
 ## Project Description
@@ -78,19 +81,27 @@ In our application, scan data from a laser scan sensor RPLIDAR is used to estima
 
 We useSlam_gmappingto create a map of our environment. After that, we can loadthe created map into a map-server and use AMCL for navigation. Here is the command interminal:
 
-####  On the Turtlebot:
+On the Turtlebot:
+```
 $ roslaunch turtlebot_bringup minimal.launch$ roslaunch turtlebot_navigation gmapping_demo.launch
+```
+```
 $ rosrun map_server map_saver -f /tmp/my_map
-
-####  On the WorkStation:
+```
+On the WorkStation:
+```
 $ roslaunch turtlebot_rviz_launchers view_navigation.launch
-
-####  Save the map to a file
+```
+Save the map to a file
+```
 $ roscd turtlebot_vibot_nav/maps/
+```
+```
 $ rosrun map_server map_saver -f my_map
+```
 By default,map_saver retrieves map data and writes it out to map.pgm and map.yaml. Use the -f option to provide a different base name for the output files. (-f ymap=>my_map.pgm+ my_map.yaml)
 
-Nota Bene: Never close the Gmapping until the map is saved 
+<b>Note: Never close the Gmapping until the map is saved</b> 
 
 A comparison of the result obtained from a map building with an RPLIDAR scan sensorand Kinect is shown below:
 
