@@ -117,4 +117,5 @@ Both Navigation and Fine Positioning can be performed sequentially by executing 
 After executing the launch file press <img src="/Images/key_space_bar.png" width="80" height="20" alt="Space Bar" /> key to start the process. We have achieved the goal of the project and here are some Recorded Results of our implementation.
 
 ### Visual Servoing with A4 Size QR-tag
-[![SCENARIO](https://i9.ytimg.com/vi/4ZlNWGChNNU/mqdefault.jpg?time=1578251690934&sqp=CIjpyPAF&rs=AOn4CLDEcmNdqRa2DB6Ko4ICMyXs-VyfSw)](https://youtu.be/4ZlNWGChNNU)
+[![Servo](http://img.youtube.com/vi/4ZlNWGChNNU/0.jpg)](http://www.youtube.com/watch?v=4ZlNWGChNNU "Visual Servoing")
+
