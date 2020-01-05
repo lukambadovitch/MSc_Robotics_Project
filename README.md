@@ -50,7 +50,8 @@ on the turtlebot pc:
 git clone https://github.com/Macaulay-Sadiq/MSc_Robotics_Project.git
 cd  </catkin_ws>
 catkin make
-rospack profile ```
+rospack profile
+```
 
 
 ## Navigation
