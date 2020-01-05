@@ -5,7 +5,7 @@
   2. [Project Description](#project-description)
   3. [Navigation](#navigation)
   4. [Visual Servoing](#visual-servoing)
-  5. [Results](#results)
+  5. [Outcomes](#outcomes)
 
 ## Introduction
 
@@ -42,9 +42,6 @@ rospack profile
 - <b> Installing VISP package for visual servoing </b>:
 
 http://wiki.ros.org/visp
-
-
-
 
 ## Navigation
 
@@ -87,17 +84,22 @@ The following Figure clearly explains the sequential procedure for IBVS.
    Figure 2: Block Diagram of Image Based Visual Servoing
 </p>
 
-#### Implementation
+### Implementation
 The control law is computed in the ```turtlebot_follower``` node which can be found in the ```visual_servoing_prj``` directory. In this file we subscribe to the ```/object_position``` topic published by the ```visp_auto_tracker``` package to extract the coordinates of the detected points on the QR-tag and the output velocity is published to ```/cmd_vel``` on the turtlebot.
 
-By running the following line of code we are able to perform the visual servoing with the turtlebot (Run this command on the turtlebot).
+By executing the following line of code we are able to perform the visual servoing with the turtlebot (Run this command on the turtlebot).
 
 ``` 
 roslaunch visual_servoing_prj kinect_visp.launch
 ```
+## Outcomes
+Both Navigation and Fine Positioning can be performed sequentially by executing the following line of code (Run this command on the turtlebot). 
 
+```
+roslaunch visual_servoing_prj turtlebot_follower.launch
+```
 
+After executing the launch file press <img src="/Images/key_space_bar.png" width="80" height="20" alt="Space Bar" /> key to start the process. We have achieved the goal of the project and here are some Recorded Results of our implementation.
 
-
-## Results
-[![SCENARIO](http://i3.ytimg.com/vi/Egyl9DstUiU/maxresdefault.jpg)](https://www.youtube.com/watch?v=Egyl9DstUiU)
+### Visual Servoing with A4 Size QR-tag
+[![SCENARIO](http://i3.ytimg.com/vi/Egyl9DstUiU/maxresdefault.jpg)](https://youtu.be/4ZlNWGChNNU)
