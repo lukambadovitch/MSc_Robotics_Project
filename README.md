@@ -104,7 +104,7 @@ By executing the following line of code we are able to perform the visual servoi
 roslaunch visual_servoing_prj kinect_visp.launch
 ```
 ## Outcomes
-Both Navigation and Fine Positioning can be performed sequentially by executing the following line of code (Run this command on the turtlebot). 
+Both Navigation and Fine Positioning can be performed sequentially by executing the following line of code (Run this command on the turtlebot through ssh). 
 
 ```
 roslaunch visual_servoing_prj turtlebot_follower.launch
