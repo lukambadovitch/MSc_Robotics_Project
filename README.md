@@ -18,14 +18,19 @@ This project is developed under ROS-Kinetic environment on Ubuntu 16.04 LTS impl
 - <b> Building ROS Environment for the Project </b>:
 
 http://wiki.ros.org/kinetic/Installation/Ubuntu
+
 http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
+
 https://wiki.ros.org/ROS/EnvironmentVariables
+
 - <b> Mobile Robot Configuration (TurtleBot-2)</b>:
 
 http://wiki.ros.org/turtlebot/Tutorials/indigo/Turtlebot%20Installation
+
 - <b>TurtleBot management from the workstation </b>:
 
 http://wiki.ros.org/ROS/Tutorials/MultipleMachines
+
 - <b> Configuration of the Laser sensor with Turtlebot </b>:
 
 clone the project from https://github.com/roboticslab-fr/turtlebot_vibot into ```/src``` directory of your catkin workspace
@@ -35,6 +40,7 @@ catkin make
 rospack profile
 ```
 - <b> Installing VISP package for visual servoing </b>:
+
 http://wiki.ros.org/visp
 
 
@@ -94,3 +100,4 @@ roslaunch visual_servoing_prj kinect_visp.launch
 
 
 ## Results
+[![SCENARIO](http://i3.ytimg.com/vi/Egyl9DstUiU/maxresdefault.jpg)](https://www.youtube.com/watch?v=Egyl9DstUiU)
