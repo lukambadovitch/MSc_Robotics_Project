@@ -161,18 +161,18 @@ The following Figure clearly explains the sequential procedure for IBVS.
 </p>
 
 ### Implementation
-The control law is computed in the ```turtlebot_follower``` node which can be found in the ```visual_servoing_prj``` directory. In this file we subscribe to the ```/object_position``` topic published by the ```visp_auto_tracker``` package to extract the coordinates of the detected points on the QR-tag and the output velocity is published to ```/cmd_vel``` on the turtlebot.
+The control law is computed in the ```turtlebot_follower``` node which can be found in the ```visual_servoing_prj``` directory. In this file we subscribe to the ```/object_position``` topic published by the ```visp_auto_tracker``` package to extract the coordinates of the detected points on the QR-tag and the output velocity is published to ```/cmd_vel_mux/input/navi``` on the turtlebot.
 
 By executing the following line of code we are able to perform the visual servoing with the turtlebot (Run this command on the turtlebot through ```ssh```).
 
 ``` 
-    $ roslaunch visual_servoing_prj kinect_visp.launch
+    $ roslaunch visual_servoing_prj visual_servo.launch
 ```
 ## Outcomes
 Both Navigation and Fine Positioning can be performed sequentially by executing the following line of code (Run this command on the turtlebot through ```ssh```). 
 
 ```
-    $ roslaunch visual_servoing_prj turtlebot_follower.launch
+    $ roslaunch visual_servoing_prj visual_servoing.launch
 ```
 
 After executing the launch file press <img src="/Images/key_space_bar.png" width="80" height="20" alt="Space Bar" /> key to start the process. We have achieved the goal of the project and here are some Recorded Results of our implementation.
