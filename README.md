@@ -73,7 +73,7 @@ Creating and developing necessary approaches through a combination and possible 
     $ rospack profile
 ```
 
-## Navigation
+## Mapping & Navigation
 ### Map Creation
 In our application, scan data from a laser sensor (RPLIDAR) is used to estimate the location of landmarks in the environment through the process of dead reckoning.  With the required ROS packages, we can compute the scan data collected from the sensor to build a corresponding 2D map of the environment. An alternative to the RPLIDAR scan sensor, scandata from an RGB-D (Kinect) camera can as well be used to build map. The Kinect which seems ready to use with our robot ROS packages is less efficient for the map building. We have considered the use of the RPLIDAR over the Kinect camera for the map building since it gives scan data from its 360-degree angle of view from the robot’s current position, while the Kinect can only give about 57-60 degree angle of view scan data.  The angle of view of the laser sensor is of great importance to us to manage the problem of loop-closure and discontinuities during map building, therefore, a more accurate map can be obtained for a reliable and realistic environment measurements[2](#2-a-d-mkorkmaz-and-y-e-tusun-sensor-comparison-for-a-real-time-slam-ap-plication-in-international-journal-of-information-and-electronics-engineering-march-2018).
 
@@ -111,6 +111,7 @@ The map built for this project with an RPLIDAR scan sensor is shown below:
    Figure 1: Map
 </p>
 
+### Navigation
 The next task after building a map is to make the robot to move on the created map. For this task the robot is given commands to move from its current position to a goal position inside the map without colliding any obstacles. Given a goal position, the algorithm will estimate the robot trajectory from its current position in the presence of static obstacles (requires global path planning) and dynamic obstacles (requires local path planning). The problem of path-planning focuses on the minimization of travel distance between the robot current position and its given goal position on the map in the presence of obstacles[3](#3--a-a-anis-koubaa-jsahar-trigui-and-i-chaari-introduction-to-mobile-robotpath-planning-robot-path-planning-and-cooperation-p-chapter-1-january2018). By exploring the functionalities of the Dynamic-Window Approach (DWA) algorithm [4](#4-w-b-d-fox-and-s-thrun-the-dynamic-window-approach-to-collision-avoid-ance-in-asian-conference-on-computer-vision-springer-2009) (included in base local planner ROS package) for the reactive obstacle avoidance for local path-planning together with the A* and the Dijkstra algorithms for global path planning (included in global planner ROS package) the results will then be compared with other methods of path-planning. In the end, we were able to conveniently navigate our robot on the built map from an initial position of the robot to a target position without collision of the robot on any form of obstacles. Thanks to the ```turtlebot_vibot_nav``` package, we performed the navigation and obstacle avoidance using the combination of Kinect and RPLidar. This is defined in the launch file called amcl_demo_rplidar.launch
 
 ## Visual Servoing
