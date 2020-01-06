@@ -105,7 +105,7 @@ By default,map_saver retrieves map data and writes it to map.pgm and map.yaml. U
 The map built for this project with an RPLIDAR scan sensor is shown below:
 
 <p align="center">
-   <img src="/Images/Map.JPG" width="500" height="300" alt="Map Creation" />
+   <img src="/Images/Map.png" width="400" height="400" alt="Map Creation" />
 </p>
 <p align="center">
    Figure 1: Map
