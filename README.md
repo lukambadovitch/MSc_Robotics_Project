@@ -82,7 +82,7 @@ We use ```slam_gmapping``` to create a map of our environment. After that, we ca
 - On the Turtlebot:
 ```
     $ roslaunch turtlebot_bringup minimal.launch
-    $ roslaunch turtlebot_navigation gmapping_demo.launch
+    $ roslaunch turtlebot_vibot_nav gmapping_demo_rplidar.launch
 ```
 ```
     $ rosrun map_server map_saver -f /tmp/my_map
