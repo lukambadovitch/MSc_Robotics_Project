@@ -79,7 +79,7 @@ In our application, scan data from a laser sensor (RPLIDAR) is used to estimate 
 
 We use ```slam_gmapping``` to create a map of our environment. After that, we can load the created map into a map-server and use AMCL for navigation. Here is the command interminal:
 
-- On the Turtlebot:
+- On the Turtlebot through ```ssh```:
 ```
     $ roslaunch turtlebot_bringup minimal.launch
     $ roslaunch turtlebot_vibot_nav gmapping_demo_rplidar.launch
@@ -157,13 +157,13 @@ The following Figure clearly explains the sequential procedure for IBVS.
 ### Implementation
 The control law is computed in the ```turtlebot_follower``` node which can be found in the ```visual_servoing_prj``` directory. In this file we subscribe to the ```/object_position``` topic published by the ```visp_auto_tracker``` package to extract the coordinates of the detected points on the QR-tag and the output velocity is published to ```/cmd_vel``` on the turtlebot.
 
-By executing the following line of code we are able to perform the visual servoing with the turtlebot (Run this command on the turtlebot).
+By executing the following line of code we are able to perform the visual servoing with the turtlebot (Run this command on the turtlebot through ```ssh```).
 
 ``` 
     $ roslaunch visual_servoing_prj kinect_visp.launch
 ```
 ## Outcomes
-Both Navigation and Fine Positioning can be performed sequentially by executing the following line of code (Run this command on the turtlebot through ssh). 
+Both Navigation and Fine Positioning can be performed sequentially by executing the following line of code (Run this command on the turtlebot through ```ssh```). 
 
 ```
     $ roslaunch visual_servoing_prj turtlebot_follower.launch
