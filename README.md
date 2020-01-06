@@ -79,9 +79,10 @@ In our application, scan data from a laser sensor (RPLIDAR) is used to estimate 
 
 We use ```slam_gmapping``` to create a map of our environment. After that, we can load the created map into a map-server and use AMCL for navigation. Here is the command interminal:
 
-- On the Turtlebot:
+- On the Turtlebot through ```ssh```:
 ```
-    $ roslaunch turtlebot_bringup minimal.launch$ roslaunch turtlebot_navigation gmapping_demo.launch
+    $ roslaunch turtlebot_bringup minimal.launch
+    $ roslaunch turtlebot_vibot_nav gmapping_demo_rplidar.launch
 ```
 ```
     $ rosrun map_server map_saver -f /tmp/my_map
@@ -112,7 +113,13 @@ The map built for this project with an RPLIDAR scan sensor is shown below:
 </p>
 
 ### Navigation
-The next task after building a map is to make the robot to move on the created map. For this task the robot is given commands to move from its current position to a goal position inside the map without colliding any obstacles. Given a goal position, the algorithm will estimate the robot trajectory from its current position in the presence of static obstacles (requires global path planning) and dynamic obstacles (requires local path planning). The problem of path-planning focuses on the minimization of travel distance between the robot current position and its given goal position on the map in the presence of obstacles[3](#3--a-a-anis-koubaa-jsahar-trigui-and-i-chaari-introduction-to-mobile-robotpath-planning-robot-path-planning-and-cooperation-p-chapter-1-january2018). By exploring the functionalities of the Dynamic-Window Approach (DWA) algorithm [4](#4-w-b-d-fox-and-s-thrun-the-dynamic-window-approach-to-collision-avoid-ance-in-asian-conference-on-computer-vision-springer-2009) (included in base local planner ROS package) for the reactive obstacle avoidance for local path-planning together with the A* and the Dijkstra algorithms for global path planning (included in global planner ROS package) the results will then be compared with other methods of path-planning. In the end, we were able to conveniently navigate our robot on the built map from an initial position of the robot to a target position without collision of the robot on any form of obstacles. Thanks to the ```turtlebot_vibot_nav``` package, we performed the navigation and obstacle avoidance using the combination of Kinect and RPLidar. This is defined in the launch file called amcl_demo_rplidar.launch
+The next task after building a map is to make the robot to move on the created map. For this task the robot is given commands to move from its current position to a goal position inside the map without colliding any obstacles. Given a goal position, the algorithm will estimate the robot trajectory from its current position in the presence of static obstacles (requires global path planning) and dynamic obstacles (requires local path planning). The problem of path-planning focuses on the minimization of travel distance between the robot current position and its given goal position on the map in the presence of obstacles[3](#3--a-a-anis-koubaa-jsahar-trigui-and-i-chaari-introduction-to-mobile-robotpath-planning-robot-path-planning-and-cooperation-p-chapter-1-january2018). By exploring the functionalities of the Dynamic-Window Approach (DWA) algorithm [4](#4-w-b-d-fox-and-s-thrun-the-dynamic-window-approach-to-collision-avoid-ance-in-asian-conference-on-computer-vision-springer-2009) (included in base local planner ROS package) for the reactive obstacle avoidance for local path-planning together with the A* and the Dijkstra algorithms for global path planning (included in global planner ROS package) the results will then be compared with other methods of path-planning. In the end, we were able to conveniently navigate our robot on the built map from an initial position of the robot to a target position without collision of the robot on any form of obstacles. Thanks to the ```turtlebot_vibot_nav``` package, we performed the navigation and obstacle avoidance using the combination of Kinect and RPLidar. 
+
+By executing the following line of code we are able to perform the navigation with the turtlebot (Run this command on the turtlebot through ```ssh```).
+
+``` 
+    $ roslaunch turtlebot_vibot_nav amcl_demo_rplidar.launch
+```
 
 ## Visual Servoing
 Visual Servoing (VS), also known as Vision-based Robot Control is a technique which helps in fine-positioning of a robot by using the Visual Features (obtained from a Vision Sensor) as Feedback Information to control the Movement of the Robot. Visual Servoing can be performed in two configurations based on the placement of Vision Sensors, Eye-in-Hand (the Camera is placed in the Robot and the observing target is static or dynamic placed in the environment) or Eye-to-Hand (the Camera is fixed in the world and observes the moving target attached to the Robot)[5](#5-peter-corke-robotics-vision-and-control---fundamental-algorithms-in-matlab-springer-tracts-in-advanced-robotics-vol73). In this project Eye-in-Hand configuration has been opted.  
@@ -156,13 +163,13 @@ The following Figure clearly explains the sequential procedure for IBVS.
 ### Implementation
 The control law is computed in the ```turtlebot_follower``` node which can be found in the ```visual_servoing_prj``` directory. In this file we subscribe to the ```/object_position``` topic published by the ```visp_auto_tracker``` package to extract the coordinates of the detected points on the QR-tag and the output velocity is published to ```/cmd_vel``` on the turtlebot.
 
-By executing the following line of code we are able to perform the visual servoing with the turtlebot (Run this command on the turtlebot).
+By executing the following line of code we are able to perform the visual servoing with the turtlebot (Run this command on the turtlebot through ```ssh```).
 
 ``` 
     $ roslaunch visual_servoing_prj kinect_visp.launch
 ```
 ## Outcomes
-Both Navigation and Fine Positioning can be performed sequentially by executing the following line of code (Run this command on the turtlebot through ssh). 
+Both Navigation and Fine Positioning can be performed sequentially by executing the following line of code (Run this command on the turtlebot through ```ssh```). 
 
 ```
     $ roslaunch visual_servoing_prj turtlebot_follower.launch
