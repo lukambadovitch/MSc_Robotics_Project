@@ -11,8 +11,12 @@ Note: This laucnch fle helps inplements the kinect sensor bring up and remaps th
 
 <launch>
 		<param name="/camera_prefix" type="string" value="/" />
-	<!-- 3dsensor (kinect) bringup >
-  <include file="$(find turtlebot_vibot_bringup)/launch/3dsensor_rplidar.launch" /-->
+		<!--Launch the LaserScan minimal-->
+
+        <include file="$(find turtlebot_vibot_bringup)/launch/minimal_rplidar.launch" />
+
+		<!--Launch the LaserScan minimal-->
+        <include file="$(find turtlebot_vibot_bringup)/launch/3dsensor_rplidar.launch" />
 
   <!-- Launch the tracking node -->
   <node pkg="visp_auto_tracker" type="visp_auto_tracker" name="visp_auto_tracker" output="screen">
@@ -26,7 +30,7 @@ Note: This laucnch fle helps inplements the kinect sensor bring up and remaps th
   </node>
 
 	<!-- % rosrun servo_turtlebot visual_servo_turtlebot_node --> 
-  <node respawn="true" pkg="visual_servoing_prj" type="turtlebot_follower" name="visual_servo_turtlebot_node" output="screen">
+  <node respawn="true" pkg="visual_servoing_prj" type="pose_refinement" name="visual_servo_turtlebot_node" output="screen">
      <remap from="/object_position" to="/visp_auto_tracker/object_position" />
      <!-- remap from="/vs/pioneer/cmd_vel" to="/mobile_base/commands/velocity" / -->
      <remap from="/camera_info" to="/camera/rgb/camera_info"/>
