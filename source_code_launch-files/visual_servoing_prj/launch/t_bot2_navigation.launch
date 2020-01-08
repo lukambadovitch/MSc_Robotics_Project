@@ -1,0 +1,18 @@
+<launch>
+
+		<!--Launch the LaserScan Minimal launch-->
+        <include file="$(find turtlebot_vibot_bringup)/launch/minimal_rplidar.launch" />
+						
+		<!--Launch the AMCL with the Pincher arm as initial pose on the map-->
+        <include file="$(find turtlebot_navigation)/launch/amcl_demo.launch" >
+          <arg name="map_file" value="/home/mscv/MSc_Robotics_Project/map/map_robotics-lab_laser.yaml" />
+	  <arg name="initial_pose_x" default="2.729"/>
+          <arg name="initial_pose_y" default="-0.058"/>
+          <arg name="initial_pose_a" default="1.987"/>
+
+        </include>
+	
+	
+</launch>
+
+

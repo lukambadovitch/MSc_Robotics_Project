@@ -1,0 +1,35 @@
+<!-- -*- xml -*-
+
+Project work by: Macaulay Sadiq
+		 Abdul Salam Rasmi ASRAF ALI
+		 Deogratias Lukamba Nsadisa
+		 Akshaykumar DUDHAGARA
+Objective: application of Image-based servoing on a mobile robot (turtlebot)      
+
+Note: This laucnch fle helps inplements the kinect sensor bring up and remaps the required input topic for the vision tracking package (Visp)
+  -->
+
+<launch>
+		<param name="/camera_prefix" type="string" value="/" />
+	<!-- 3dsensor (kinect) bringup >
+  <include file="$(find turtlebot_vibot_bringup)/launch/3dsensor_rplidar.launch" /-->
+
+  <!-- Launch the tracking node -->
+  <node pkg="visp_auto_tracker" type="visp_auto_tracker" name="visp_auto_tracker" output="screen">
+    <param name="model_path" type="string" value="$(find visual_servoing_prj)/model" />
+    <param name="model_name" type="string" value="pattern" />
+    <param name="debug_display" value="True" />
+    <!-- param name="code_message" value="Ver1" / -->
+    
+    <remap from="/visp_auto_tracker/camera_info" to="/camera/rgb/camera_info"/>
+    <remap from="/visp_auto_tracker/image_raw" to="/camera/rgb/image_raw"/>
+  </node>
+
+	<!-- % rosrun servo_turtlebot visual_servo_turtlebot_node --> 
+  <node respawn="true" pkg="visual_servoing_prj" type="turtlebot_follower" name="visual_servo_turtlebot_node" output="screen">
+     <remap from="/object_position" to="/visp_auto_tracker/object_position" />
+     <!-- remap from="/vs/pioneer/cmd_vel" to="/mobile_base/commands/velocity" / -->
+     <remap from="/camera_info" to="/camera/rgb/camera_info"/>
+  </node>
+
+</launch>
